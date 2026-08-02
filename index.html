@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JebsonSEO — SEO Specialist</title>
+<meta name="description" content="JebsonSEO — SEO Specialist based in Lagos, Nigeria. Expert in keyword research, technical SEO, content strategy, and SEO-driven content writing that grows organic visibility." />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════════════
+   RESET & TOKENS
+═══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d0d0d;--paper:#f5f0e8;--cream:#ede7d9;
+  --gold:#c8a96e;--gold2:#e8c98a;--rust:#b84c2b;
+  --muted:#7a7060;--white:#fdfaf4;--dark:#1a1208;
+  --fd:'DM Serif Display',Georgia,serif;
+  --fb:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:16px;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.03;pointer-events:none;z-index:9999}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:400;line-height:1.15}
+a{color:inherit;text-decoration:none}
+p{color:#3a3530}
+img{max-width:100%;display:block}
+
+/* ═══════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5vw;background:rgba(245,240,232,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,169,110,.2);transition:padding .3s}
+.nav-scrolled{padding:.8rem 5vw;box-shadow:0 4px 24px rgba(13,13,13,.06)}
+.nav-logo{font-family:var(--fd);font-size:1.3rem;letter-spacing:-.01em}
+.nav-logo span{color:var(--rust);font-style:italic}
+.nav-links{display:flex;gap:1.75rem;align-items:center}
+.nav-links a{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--rust)}
+.nav-cta{background:var(--ink)!important;color:var(--paper)!important;padding:.5rem 1.25rem;border-radius:2px;transition:background .2s!important}
+.nav-cta:hover{background:var(--rust)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(245,240,232,.98);backdrop-filter:blur(16px);padding:1.5rem 5vw;gap:1rem;border-bottom:1px solid rgba(200,169,110,.2);z-index:99}
+.mobile-nav a{font-size:.88rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:.5rem 0;border-bottom:1px solid rgba(200,169,110,.15)}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav.open{display:flex}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:0 5vw;padding-top:5rem;gap:4rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(ellipse at center,rgba(200,169,110,.15) 0%,transparent 70%);pointer-events:none}
+.hero-left{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--rust)}
+.hero h1{font-size:clamp(2.8rem,5vw,4.8rem);letter-spacing:-.03em;color:var(--ink);line-height:1.08}
+.hero h1 em{color:var(--rust);font-style:italic}
+.hero-sub{font-size:clamp(.9rem,1.1vw,1rem);color:var(--muted);max-width:440px;margin:1.25rem 0 2.25rem;line-height:1.85}
+.hero-actions{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:var(--paper);padding:.8rem 1.85rem;font-size:.82rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:2px;transition:background .25s,transform .2s;display:inline-block}
+.btn-primary:hover{background:var(--rust);transform:translateY(-1px)}
+.btn-ghost{color:var(--ink);font-size:.82rem;font-weight:500;display:inline-flex;align-items:center;gap:.5rem;transition:color .2s,gap .2s}
+.btn-ghost:hover{color:var(--rust);gap:.75rem}
+
+/* Hero Counter Strip */
+.hero-strip{display:flex;gap:0;margin-top:2.75rem;padding-top:2rem;border-top:1px solid rgba(200,169,110,.3)}
+.hero-stat{flex:1;border-right:1px solid rgba(200,169,110,.2);padding-right:1.5rem;margin-right:1.5rem}
+.hero-stat:last-child{border-right:none;margin-right:0;padding-right:0}
+.hero-stat-num{font-family:var(--fd);font-size:2rem;color:var(--ink);line-height:1}
+.hero-stat-num span{color:var(--rust)}
+.hero-stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.2rem}
+
+/* Profile Card */
+.profile-card{background:var(--white);border:1px solid rgba(200,169,110,.35);border-radius:4px;padding:2.5rem 2.25rem;width:100%;max-width:380px;position:relative;box-shadow:0 24px 64px rgba(13,13,13,.07),0 4px 12px rgba(200,169,110,.1)}
+.profile-card::before{content:'';position:absolute;top:-1px;left:36px;right:36px;height:3px;background:linear-gradient(90deg,var(--rust),var(--gold));border-radius:0 0 4px 4px}
+.profile-avatar{width:72px;height:72px;background:linear-gradient(135deg,var(--gold),var(--rust));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.8rem;color:white;margin-bottom:1.25rem}
+.profile-name{font-family:var(--fd);font-size:1.5rem;margin-bottom:.2rem}
+.profile-name span{color:var(--rust);font-style:italic}
+.profile-role{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.profile-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem}
+.tag{font-size:.68rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .65rem;border:1px solid rgba(200,169,110,.4);border-radius:2px;color:var(--muted);background:rgba(200,169,110,.06)}
+.status-row{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:var(--muted)}
+.dot-green{width:7px;height:7px;background:#4caf79;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero-right{display:flex;justify-content:center;align-items:center}
+
+/* ═══════════════════════════════════════════════
+   SHARED
+═══════════════════════════════════════════════ */
+section{padding:6rem 5vw}
+.label{font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);display:flex;align-items:center;gap:.55rem;margin-bottom:.9rem}
+.label::before{content:'';display:block;width:18px;height:1px;background:var(--rust)}
+.label-center{justify-content:center}
+.label-center::before{display:none}
+.label-center::after{content:'';display:none}
+h2.section-title{font-size:clamp(1.9rem,3.2vw,2.9rem);letter-spacing:-.02em;max-width:520px;margin-bottom:.9rem}
+h2.section-title em{font-style:italic;color:var(--rust)}
+.section-body{max-width:520px;color:var(--muted);font-size:.95rem;line-height:1.85}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ═══════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════ */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-list{list-style:none;margin-top:1.75rem;display:flex;flex-direction:column;gap:.9rem}
+.about-list li{display:flex;align-items:flex-start;gap:.9rem;font-size:.9rem;color:#3a3530;line-height:1.65}
+.about-list li::before{content:'—';color:var(--gold);font-family:var(--fd);flex-shrink:0;margin-top:.05rem}
+.toolkit-label{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.pill-wrap{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{font-size:.76rem;font-weight:500;padding:.4rem .9rem;background:var(--white);border:1px solid rgba(200,169,110,.4);border-radius:100px;color:var(--ink);transition:background .2s,border-color .2s}
+.pill:hover{background:var(--gold2);border-color:var(--gold)}
+.about-right{padding-top:2.5rem}
+.exp-badges{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.75rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;border:1px solid}
+.badge-rust{border-color:rgba(184,76,43,.35);color:var(--rust);background:rgba(184,76,43,.07)}
+.badge-gold{border-color:rgba(200,169,110,.4);color:#8a6b35;background:rgba(200,169,110,.1)}
+.badge-green{border-color:rgba(76,175,121,.35);color:#2d8a55;background:rgba(76,175,121,.08)}
+
+/* ═══════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════ */
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(200,169,110,.18);border:1px solid rgba(200,169,110,.18)}
+.service-card{background:var(--paper);padding:2.5rem 2rem;transition:background .25s;position:relative;overflow:hidden}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rust),var(--gold));transform:scaleX(0);transition:transform .35s ease;transform-origin:left}
+.service-card:hover{background:var(--white)}
+.service-card:hover::after{transform:scaleX(1)}
+.service-icon{font-size:1.5rem;margin-bottom:1rem;display:block}
+.service-num{font-family:var(--fd);font-size:.7rem;color:rgba(200,169,110,.55);letter-spacing:.1em;position:absolute;top:1.75rem;right:1.75rem}
+.service-card h3{font-size:1.1rem;margin-bottom:.65rem;letter-spacing:-.01em}
+.service-card p{font-size:.85rem;color:var(--muted);line-height:1.75}
+
+/* ═══════════════════════════════════════════════
+   PROCESS
+═══════════════════════════════════════════════ */
+.process{background:var(--ink);color:var(--paper)}
+.process .label{color:var(--gold)}
+.process .label::before{background:var(--gold)}
+.process-steps{margin-top:3.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:1.8rem;left:0;right:0;height:1px;background:rgba(200,169,110,.18)}
+.step-dot{width:14px;height:14px;border-radius:50%;background:var(--rust);outline:1px solid var(--rust);outline-offset:3px;position:relative;z-index:1;margin-bottom:1.5rem}
+.step-num{font-family:var(--fd);font-size:.65rem;letter-spacing:.12em;color:var(--gold);margin-bottom:.45rem}
+.step h3{font-size:1rem;color:var(--white);margin-bottom:.5rem}
+.step p{font-size:.82rem;color:rgba(245,240,232,.45);line-height:1.7}
+
+/* ═══════════════════════════════════════════════
+   WORK / PORTFOLIO
+═══════════════════════════════════════════════ */
+.work-filter-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filter-btn{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;border:1px solid rgba(200,169,110,.4);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.25rem}
+.work-card{background:var(--cream);border:1px solid rgba(200,169,110,.22);border-radius:3px;padding:2rem;position:relative;transition:transform .25s,box-shadow .25s;overflow:hidden}
+.work-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+.work-card.agency::before{background:linear-gradient(180deg,var(--rust),var(--gold))}
+.work-card.freelance::before{background:linear-gradient(180deg,#0a66c2,#4caf79)}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(13,13,13,.09)}
+.work-card.hidden{display:none}
+.wc-category{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.6rem}
+.wc-client{font-size:.76rem;color:var(--muted);margin-bottom:.3rem}
+.work-card h3{font-size:1.05rem;color:var(--ink);margin-bottom:.6rem;line-height:1.35}
+.work-card p{font-size:.83rem;color:var(--muted);line-height:1.7;margin-bottom:1.25rem}
+.wc-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.wc-tag{font-size:.65rem;font-weight:500;padding:.2rem .6rem;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.3);border-radius:2px;color:var(--muted)}
+.wc-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.wc-btn-view{font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(184,76,43,.35);padding:.38rem .85rem;border-radius:2px;transition:all .2s}
+.wc-btn-view:hover{background:var(--rust);color:var(--white);border-color:var(--rust)}
+.wc-btn-dl{font-size:.72rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:var(--ink);padding:.38rem .85rem;border-radius:2px;transition:background .2s}
+.wc-btn-dl:hover{background:var(--rust)}
+.context-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.63rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;border-radius:100px;margin-bottom:.9rem}
+.badge-agency{background:rgba(184,76,43,.1);border:1px solid rgba(184,76,43,.25);color:var(--rust)}
+.badge-freelance{background:rgba(10,102,194,.08);border:1px solid rgba(10,102,194,.25);color:#0a66c2}
+.badge-ongoing{background:rgba(76,175,121,.1);border:1px solid rgba(76,175,121,.3);color:#2d8a55}
+
+/* Featured work card */
+.work-card-featured{background:linear-gradient(160deg,#1a1208 0%,#2d1f0a 100%);color:var(--paper);grid-column:1/-1}
+.work-card-featured::before{background:linear-gradient(180deg,var(--gold),var(--rust));width:100%;height:3px;top:0;left:0}
+.work-card-featured .wc-category{color:var(--gold2)}
+.work-card-featured .wc-client{color:rgba(245,240,232,.5)}
+.work-card-featured h3{color:var(--white);font-size:1.25rem}
+.work-card-featured p{color:rgba(245,240,232,.6)}
+.work-card-featured .wc-tag{background:rgba(200,169,110,.12);border-color:rgba(200,169,110,.25);color:rgba(245,240,232,.5)}
+.featured-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.featured-responsibilities{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1.25rem 0}
+.feat-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.82rem;color:rgba(245,240,232,.6)}
+.feat-item::before{content:'▸';color:var(--gold);flex-shrink:0;margin-top:.05rem}
+.active-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#4caf79;background:rgba(76,175,121,.12);border:1px solid rgba(76,175,121,.3);padding:.28rem .75rem;border-radius:100px;margin-bottom:1rem}
+
+/* ═══════════════════════════════════════════════
+   CERTIFICATES
+═══════════════════════════════════════════════ */
+.certs{background:var(--cream)}
+.certs-tabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.cert-tab{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:2px;border:1px solid rgba(200,169,110,.35);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.cert-tab.active{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.cert-panel{display:none;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+.cert-panel.active{display:grid}
+.cert-card{background:var(--white);border:1px solid rgba(200,169,110,.28);border-radius:4px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,13,13,.08)}
+.cert-thumb{height:130px;display:flex;align-items:center;justify-content:center;position:relative}
+.cert-card:nth-child(1) .cert-thumb{background:linear-gradient(135deg,#1a1208,#2d1f0a)}
+.cert-card:nth-child(2) .cert-thumb{background:linear-gradient(135deg,#0a1a2a,#0d2640)}
+.cert-card:nth-child(3) .cert-thumb{background:linear-gradient(135deg,#0d1f0a,#1a3312)}
+.cert-card:nth-child(4) .cert-thumb{background:linear-gradient(135deg,#1a0a1a,#2d0d2d)}
+.cert-card:nth-child(5) .cert-thumb{background:linear-gradient(135deg,#1a0d0a,#341808)}
+.cert-icon{font-size:2.2rem;position:relative;z-index:1}
+.cert-issuer-badge{position:absolute;bottom:.75rem;left:50%;transform:translateX(-50%);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;padding:.2rem .55rem;border-radius:100px;background:rgba(0,0,0,.4)}
+.cert-body{padding:1.25rem}
+.cert-type{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:.3rem}
+.cert-body h3{font-family:var(--fd);font-size:.95rem;color:var(--ink);margin-bottom:.3rem;line-height:1.35}
+.cert-body .cert-meta{font-size:.78rem;color:var(--muted);margin-bottom:.9rem}
+.cert-link{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);display:inline-flex;align-items:center;gap:.35rem;transition:gap .2s}
+.cert-link:hover{gap:.55rem}
+
+/* ═══════════════════════════════════════════════
+   DOWNLOADS
+═══════════════════════════════════════════════ */
+.dl-card{background:var(--white);border:1px solid rgba(200,169,110,.22);border-radius:3px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.dl-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
+.dl-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(13,13,13,.07)}
+.dl-icon-wrap{width:46px;height:46px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem}
+.dl-card-body{flex:1}
+.dl-type{font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-bottom:.25rem}
+.dl-card h3{font-family:var(--fd);font-size:.95rem;color:var(--ink);margin-bottom:.35rem;line-height:1.3}
+.dl-card p{font-size:.8rem;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+.dl-actions{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
+.dl-badge{font-size:.65rem;color:var(--muted);background:var(--cream);padding:.22rem .6rem;border-radius:100px;border:1px solid rgba(200,169,110,.2)}
+.dl-btn-view{font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--rust);border:1px solid rgba(184,76,43,.3);padding:.35rem .8rem;border-radius:2px;transition:all .2s}
+.dl-btn-view:hover{background:var(--rust);color:var(--white);border-color:var(--rust)}
+.dl-btn-dl{font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--white);background:var(--rust);padding:.35rem .8rem;border-radius:2px;display:inline-flex;align-items:center;gap:.35rem;transition:background .2s}
+.dl-btn-dl:hover{background:#9a3d22}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.1rem}
+
+/* ═══════════════════════════════════════════════
+   CTA
+═══════════════════════════════════════════════ */
+.cta-section{background:var(--ink);text-align:center;padding:8rem 5vw;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(ellipse,rgba(200,169,110,.07) 0%,transparent 65%);pointer-events:none}
+.cta-section .label{justify-content:center;color:var(--gold)}
+.cta-section .label::before{background:var(--gold)}
+.cta-title{font-family:var(--fd);font-size:clamp(2.4rem,4.5vw,4.2rem);color:var(--white);letter-spacing:-.03em;margin:1rem auto;max-width:680px;line-height:1.1}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-body{color:rgba(245,240,232,.45);max-width:460px;margin:.9rem auto 2.25rem;font-size:.95rem;line-height:1.8}
+.cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--ink);padding:.85rem 2rem;font-size:.82rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:2px;transition:background .2s,transform .2s}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline-light{border:1px solid rgba(200,169,110,.4);color:rgba(245,240,232,.7);padding:.85rem 2rem;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:2px;transition:border-color .2s,color .2s}
+.btn-outline-light:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ═══════════════════════════════════════════════
+   SOCIAL STRIP
+═══════════════════════════════════════════════ */
+.social-strip{background:#111008;padding:3rem 5vw;text-align:center;border-top:1px solid rgba(200,169,110,.12)}
+.social-strip p:first-child{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.social-strip p.tagline{font-size:1rem;color:rgba(245,240,232,.38);margin-bottom:2rem;font-family:var(--fd);font-style:italic}
+.social-btns{display:flex;gap:.65rem;justify-content:center;flex-wrap:wrap;max-width:680px;margin:0 auto}
+.soc-btn{display:flex;align-items:center;gap:.45rem;padding:.6rem 1.15rem;border-radius:100px;font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+.soc-btn:hover{transform:translateY(-3px)}
+.soc-gmail{background:rgba(234,67,53,.12);border:1px solid rgba(234,67,53,.3);color:#ea4335}
+.soc-gmail:hover{background:rgba(234,67,53,.22)}
+.soc-ig{background:rgba(225,48,108,.12);border:1px solid rgba(225,48,108,.3);color:#e1306c}
+.soc-ig:hover{background:rgba(225,48,108,.22)}
+.soc-fb{background:rgba(24,119,242,.12);border:1px solid rgba(24,119,242,.3);color:#1877f2}
+.soc-fb:hover{background:rgba(24,119,242,.22)}
+.soc-x{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:rgba(245,240,232,.8)}
+.soc-x:hover{background:rgba(255,255,255,.12)}
+.soc-li{background:rgba(10,102,194,.12);border:1px solid rgba(10,102,194,.3);color:#0a66c2}
+.soc-li:hover{background:rgba(10,102,194,.22)}
+.soc-yt{background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.25);color:#ff4444}
+.soc-yt:hover{background:rgba(255,0,0,.2)}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer{background:#080806;padding:2.5rem 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;border-top:1px solid rgba(200,169,110,.08)}
+.footer-logo{font-family:var(--fd);font-size:1.05rem;color:var(--paper)}
+.footer-logo span{color:var(--rust);font-style:italic}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.72rem;color:rgba(245,240,232,.3);text-transform:uppercase;letter-spacing:.09em;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.7rem;color:rgba(245,240,232,.18)}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:6rem}
+  .hero-sub,.hero-eyebrow{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-strip{justify-content:center}
+  .hero-right{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2.5rem}
+  .featured-inner{grid-template-columns:1fr}
+  .featured-responsibilities{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-strip{flex-wrap:wrap;gap:1.25rem}
+  .hero-stat{border-right:none;padding-right:0;margin-right:0;text-align:center;min-width:120px}
+}
+@media(max-width:600px){
+  .process-steps{grid-template-columns:1fr}
+  .cert-panel{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">Jebson<span>SEO</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#downloads">Resources</a>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeNav()">About</a>
+  <a href="#services" onclick="closeNav()">Services</a>
+  <a href="#work" onclick="closeNav()">Work</a>
+  <a href="#certificates" onclick="closeNav()">Certificates</a>
+  <a href="#downloads" onclick="closeNav()">Resources</a>
+  <a href="#contact" onclick="closeNav()">Hire Me</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">SEO Specialist — Lagos, Nigeria</div>
+    <h1>Search visibility.<br><em>Built right.</em><br>Built to <em>last.</em></h1>
+    <p class="hero-sub">I'm JebsonSEO — an SEO Specialist helping brands grow their organic presence through data-driven keyword research, technical SEO, strategic content, and copywriting that both search engines and readers love.</p>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;margin-top:-.75rem;">
+      <span style="font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .7rem;border:1px solid rgba(184,76,43,.3);border-radius:2px;color:var(--rust)">Content Writer</span>
+      <span style="font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .7rem;border:1px solid rgba(184,76,43,.3);border-radius:2px;color:var(--rust)">SEO Strategist</span>
+      <span style="font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .7rem;border:1px solid rgba(184,76,43,.3);border-radius:2px;color:var(--rust)">Keyword Researcher</span>
+      <span style="font-size:.68rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:.25rem .7rem;border:1px solid rgba(184,76,43,.3);border-radius:2px;color:var(--rust)">Technical SEO</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-ghost">Let's Talk <span>→</span></a>
+    </div>
+    <div class="hero-strip">
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span id="c1">0</span></div>
+        <div class="hero-stat-label">Real Client Projects</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span id="c2">0</span></div>
+        <div class="hero-stat-label">Certifications Earned</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span id="c3">0</span></div>
+        <div class="hero-stat-label">Years Freelancing</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span id="c4">0</span><span>+</span></div>
+        <div class="hero-stat-label">Work Samples Available</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-avatar">J</div>
+      <div class="profile-name">Jebson<span>SEO</span></div>
+      <div class="profile-role">SEO Specialist</div>
+      <div style="font-size:.7rem;color:var(--muted);margin-top:-.5rem;margin-bottom:1rem;line-height:1.6">Content Writer · SEO Strategist · Keyword Researcher · Technical SEO</div>
+      <div class="profile-tags">
+        <span class="tag">Keyword Research</span>
+        <span class="tag">Content Strategy</span>
+        <span class="tag">On-Page SEO</span>
+        <span class="tag">Technical SEO</span>
+        <span class="tag">CRO Audits</span>
+        <span class="tag">Copywriting</span>
+      </div>
+      <div class="status-row">
+        <div class="dot-green"></div>
+        Available for new projects
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="label">About Me</div>
+      <h2 class="section-title">Built on real work,<br><em>real experience</em></h2>
+      <p class="section-body">I'm an SEO Specialist based in Lagos — focused on helping brands earn organic visibility through keyword research, technical SEO, and strategic content. I've been freelancing since 2024 and recently completed an SEO internship at Verge Digitals, where I worked on real client campaigns across multiple industries. My sub-expertise includes content writing, SEO strategy, and keyword research.</p>
+      <ul class="about-list">
+        <li>Solid foundation in keyword research, search intent mapping, and content calendar development backed by 5 industry certifications.</li>
+        <li>Hands-on experience producing real deliverables for real clients — SEO strategies, technical audits, CRO plans, keyword research, and landing pages.</li>
+        <li>Currently managing content and SEO for Inclusion Post (inclusionpost.com), the digital platform of DRP Initiative, covering disability rights and advocacy in Nigeria.</li>
+        <li>Committed to honest, defensible work — every piece I produce is something I can stand behind and explain in detail.</li>
+      </ul>
+      <div class="exp-badges">
+        <span class="badge badge-rust">📍 Lagos, Nigeria</span>
+        <span class="badge badge-gold">⚡ Freelancing Since 2024</span>
+        <span class="badge badge-green">✅ Agency Internship Completed</span>
+      </div>
+    </div>
+    <div class="about-right reveal reveal-delay-1">
+      <div class="toolkit-label">SEO Tools & Platforms</div>
+      <div class="pill-wrap">
+        <span class="pill">Semrush</span>
+        <span class="pill">Ahrefs</span>
+        <span class="pill">Google Search Console</span>
+        <span class="pill">Google Analytics 4</span>
+        <span class="pill">Rank Math</span>
+        <span class="pill">Yoast SEO</span>
+        <span class="pill">WordPress</span>
+        <span class="pill">Surfer SEO</span>
+        <span class="pill">PageSpeed Insights</span>
+        <span class="pill">Screaming Frog</span>
+        <span class="pill">Moz</span>
+        <span class="pill">Notion</span>
+      </div>
+      <div style="margin-top:1.5rem">
+        <div class="toolkit-label" style="margin-bottom:.9rem">Technical Skills</div>
+        <div class="pill-wrap">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Technical SEO</span>
+          <span class="pill">Core Web Vitals</span>
+          <span class="pill">Schema Markup</span>
+          <span class="pill">XML Sitemaps</span>
+          <span class="pill">Robots.txt</span>
+        </div>
+      </div>
+      <div style="margin-top:2rem">
+        <div class="toolkit-label" style="margin-bottom:.9rem">Industries Worked In</div>
+        <div class="pill-wrap">
+          <span class="pill">Oil & Gas</span>
+          <span class="pill">EdTech</span>
+          <span class="pill">Link Building</span>
+          <span class="pill">Healthcare</span>
+          <span class="pill">Language Education</span>
+          <span class="pill">Disability Rights</span>
+          <span class="pill">Digital Marketing</span>
+        </div>
+      </div>
+      <div style="margin-top:2rem">
+        <div class="toolkit-label" style="margin-bottom:.9rem">Areas of Operation</div>
+        <div class="pill-wrap">
+          <span class="pill">SEO Strategy</span>
+          <span class="pill">Technical Audits</span>
+          <span class="pill">Keyword Research</span>
+          <span class="pill">Content Calendars</span>
+          <span class="pill">Landing Pages</span>
+          <span class="pill">CRO Reports</span>
+          <span class="pill">SEO Roadmaps</span>
+          <span class="pill">Broken Link Audits</span>
+          <span class="pill">B2B SEO</span>
+          <span class="pill">E-commerce SEO</span>
+          <span class="pill">Local SEO</span>
+          <span class="pill">Blog Content</span>
+          <span class="pill">On-Page Optimization</span>
+          <span class="pill">Google Ads Strategy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <div class="label">What I Do</div>
+      <h2 class="section-title">Services built for<br><em>organic growth</em></h2>
+    </div>
+    <p class="section-body" style="max-width:320px;margin:0">Every engagement is grounded in strategy, driven by data, and delivered with precision.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-num">01</span>
+      <span class="service-icon">🔍</span>
+      <h3>Keyword Research & Mapping</h3>
+      <p>Comprehensive keyword research across informational, commercial, and transactional intent — with search volume, competition analysis, and content mapping included.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">02</span>
+      <span class="service-icon">✍️</span>
+      <h3>SEO Content Writing</h3>
+      <p>Blog posts, pillar pages, landing pages, and evergreen articles written to rank — balancing search signals with a voice that genuinely serves the reader.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">03</span>
+      <span class="service-icon">📐</span>
+      <h3>On-Page SEO Optimization</h3>
+      <p>Title tags, meta descriptions, heading structure, schema markup, and internal linking — all fine-tuned so your existing content earns the rankings it deserves.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">04</span>
+      <span class="service-icon">⚡</span>
+      <h3>Technical SEO Audits</h3>
+      <p>PageSpeed analysis, Core Web Vitals, crawlability, broken links, sitemap and robots.txt — full technical health check with prioritized recommendations.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">05</span>
+      <span class="service-icon">🗺️</span>
+      <h3>Content Strategy & Calendars</h3>
+      <p>Data-backed content roadmaps and monthly publishing calendars that align your content output with search demand and business goals.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-num">06</span>
+      <span class="service-icon">📊</span>
+      <h3>CRO & Conversion Audits</h3>
+      <p>Evaluate how your organic traffic converts — identifying UX friction, weak CTAs, and missed conversion opportunities with a clear improvement plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="reveal">
+    <div class="label">How I Work</div>
+    <h2 class="section-title" style="max-width:none;color:var(--white)">A process built for <em style="color:var(--gold)">consistent results</em></h2>
+  </div>
+  <div class="process-steps reveal">
+    <div class="step"><div class="step-dot"></div><div class="step-num">Step 01</div><h3>Discover</h3><p>Deep-dive into your brand, audience, competitors, and current search performance to identify where you stand and where the real opportunities are.</p></div>
+    <div class="step"><div class="step-dot"></div><div class="step-num">Step 02</div><h3>Strategise</h3><p>Build a data-backed roadmap — prioritised keywords, content types, publishing calendar — all aligned to your specific goals.</p></div>
+    <div class="step"><div class="step-dot"></div><div class="step-num">Step 03</div><h3>Create & Optimise</h3><p>Produce high-quality, fully optimised content or deliver technical recommendations — structured for both search engines and real readers.</p></div>
+    <div class="step"><div class="step-dot"></div><div class="step-num">Step 04</div><h3>Review & Refine</h3><p>Track performance, share clear reports, and iterate based on what the data shows — because SEO is a continuous process, not a one-off task.</p></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="reveal">
+    <div class="label">Portfolio</div>
+    <h2 class="section-title">Real work across <em>real clients</em></h2>
+    <p class="section-body" style="margin-bottom:2rem">Every project below is a real deliverable produced for a real client — either during my SEO internship at Verge Digitals or through independent freelance engagements.</p>
+  </div>
+
+  <!-- Featured — DRP Initiative -->
+  <div class="work-card work-card-featured reveal" style="margin-bottom:1.25rem;padding:2.5rem">
+    <div class="active-badge"><span style="width:6px;height:6px;background:#4caf79;border-radius:50%;display:inline-block"></span> Active — March 2025 to Present</div>
+    <div class="featured-inner">
+      <div>
+        <div class="wc-category">Ongoing Freelance Role</div>
+        <div class="wc-client" style="margin-bottom:.5rem">DRP Initiative — Inclusion Post</div>
+        <h3>Content Writer & SEO Strategist — inclusionpost.com</h3>
+        <p style="margin-bottom:0">Managing the content and SEO direction of Inclusion Post — the news and advocacy platform of DRP Initiative, covering disability rights and inclusion across Nigeria. Working directly in WordPress on a day-to-day basis.</p>
+      </div>
+      <div>
+        <div class="featured-responsibilities">
+          <div class="feat-item">Keyword research to guide topic selection</div>
+          <div class="feat-item">Monthly SEO content calendars</div>
+          <div class="feat-item">WordPress blog writing & publishing</div>
+          <div class="feat-item">On-page SEO — meta tags, headings, links</div>
+        </div>
+        <div class="wc-actions">
+          <a href="https://www.inclusionpost.com" target="_blank" class="btn-gold" style="font-size:.75rem;padding:.55rem 1.1rem">🌐 Visit Inclusion Post</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/DRP%20Initiative%2030days%20Content%20Calendar%20For%20June%20-%20DRP%20Initiative%2030days%20Content%20Calendar%20V2.pdf" target="_blank" class="wc-btn-view" style="font-size:.75rem;padding:.55rem 1.1rem">📅 View Content Calendar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter -->
+  <div class="reveal work-filter-row">
+    <button class="filter-btn active" onclick="filterWork('all',this)">All Projects</button>
+    <button class="filter-btn" onclick="filterWork('agency',this)">Agency Work (Verge Digitals)</button>
+    <button class="filter-btn" onclick="filterWork('freelance',this)">Freelance</button>
+  </div>
+
+  <!-- Work Grid -->
+  <div class="work-grid reveal">
+
+    <!-- LINKABLEASSET — SEO Strategy -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">SEO Strategy</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>SEO Strategy to Improve LinkableAsset.com</h3>
+      <p>A step-by-step SEO strategy targeting CTR improvement, content strengthening, and technical fixes — with a clear goal of reaching 2K impressions and a 2–3% CTR from Google Search Console.</p>
+      <div class="wc-tags"><span class="wc-tag">SEO Strategy</span><span class="wc-tag">GSC</span><span class="wc-tag">CTR Optimization</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Strategy%20To%20Improve%20LinkableAsset.com.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Strategy%20To%20Improve%20LinkableAsset.com.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- LINKABLEASSET — SEO Roadmap -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">SEO Roadmap</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>Full SEO Roadmap — LinkableAsset.com</h3>
+      <p>A phased SEO roadmap covering technical foundation, service page creation, topical authority building, and original research strategy — with monthly KPI tracking structure included.</p>
+      <div class="wc-tags"><span class="wc-tag">Technical SEO</span><span class="wc-tag">Content Plan</span><span class="wc-tag">Roadmap</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Roadmap%20For%20Linkableasset.com%20(1).pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Roadmap%20For%20Linkableasset.com%20(1).pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- LINKABLEASSET — Keyword Research -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Keyword Research</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>Full Keyword Research — LinkableAsset.com</h3>
+      <p>Comprehensive keyword research covering link building fundamentals, long-tail opportunities, and search intent mapping — with title and meta description recommendations for each keyword.</p>
+      <div class="wc-tags"><span class="wc-tag">Keyword Research</span><span class="wc-tag">Search Intent</span><span class="wc-tag">Meta Copy</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Keyword%20Research%20For%20LinkableAsset.com.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Keyword%20Research%20For%20LinkableAsset.com.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- LINKABLEASSET — 5 Long-tail Keywords -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Keyword Research</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>5 Informational Long-Tail Keywords</h3>
+      <p>Five high-potential informational long-tail keywords researched specifically for LinkableAsset.com — each with search intent, recommended content format, and strategic rationale.</p>
+      <div class="wc-tags"><span class="wc-tag">Long-Tail Keywords</span><span class="wc-tag">AI Search</span><span class="wc-tag">Blog Strategy</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/5%20Informational%20Long-Tailed%20Keywords%20For%20LinkableAsset.com.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/5%20Informational%20Long-Tailed%20Keywords%20For%20LinkableAsset.com.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- LINKABLEASSET — Landing Page Expansion -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Landing Page Copywriting</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>Landing Page Expansion with FAQs & Structure</h3>
+      <p>Rewrote and expanded the main landing page of LinkableAsset.com — adding FAQ sections, improving structure and readability, and optimizing for both search engines and conversion.</p>
+      <div class="wc-tags"><span class="wc-tag">Copywriting</span><span class="wc-tag">On-Page SEO</span><span class="wc-tag">FAQ Schema</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Expanding%20linkableasset.com%20Landing%20Page%20With%20FAQs%20%26%20Structure%20%20(1).pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Expanding%20linkableasset.com%20Landing%20Page%20With%20FAQs%20%26%20Structure%20%20(1).pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- LINKABLEASSET — Get Started Page -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Page Content Improvement</div>
+      <div class="wc-client">Client: LinkableAsset.com</div>
+      <h3>Improved Get-Started Page Content</h3>
+      <p>Rewrote the Get-Started page for LinkableAsset.com — improving clarity, conversion flow, and persuasive copy while keeping it fully SEO-optimized and aligned with user search intent.</p>
+      <div class="wc-tags"><span class="wc-tag">Copywriting</span><span class="wc-tag">Conversion</span><span class="wc-tag">UX Writing</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Improving%20Linkableasset-Get-Started%20Page%20Content%20(1).pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Improving%20Linkableasset-Get-Started%20Page%20Content%20(1).pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- ABRON -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Digital Marketing Strategy</div>
+      <div class="wc-client">Client: ABRON Engineering Technologies Ltd</div>
+      <h3>Search Marketing Plan — Oil & Gas Training School</h3>
+      <p>A full search marketing strategy for ABRON Engineering Technologies — covering Google Ads campaigns for both their training school and B2B engineering services, with audience segmentation and landing page recommendations.</p>
+      <div class="wc-tags"><span class="wc-tag">Google Ads</span><span class="wc-tag">SEO</span><span class="wc-tag">Google Maps</span><span class="wc-tag">Oil & Gas</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/ABRON%20Oil%20and%20gas%20training%20school%20digital%20marketing%20strategy.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/ABRON%20Oil%20and%20gas%20training%20school%20digital%20marketing%20strategy.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- ALKADEMY -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Technical SEO Audit</div>
+      <div class="wc-client">Client: Alkademy.com</div>
+      <h3>PageSpeed & Core Web Vitals Audit — Alkademy</h3>
+      <p>A detailed Google PageSpeed Insights audit for Alkademy.com — an AI-powered learning platform. Identified critical performance issues (Mobile Score: 38, LCP: 15.2s) and delivered a prioritized fix list covering images, JavaScript, caching, and render-blocking resources.</p>
+      <div class="wc-tags"><span class="wc-tag">Core Web Vitals</span><span class="wc-tag">PageSpeed</span><span class="wc-tag">Technical SEO</span><span class="wc-tag">EdTech</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Alkademy_PageSpeed_Audit_Report.docx" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Alkademy_PageSpeed_Audit_Report.docx" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- PINNACLE BHC -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">CRO Audit</div>
+      <div class="wc-client">Client: Pinnacle Behavioral Health Center</div>
+      <h3>CRO Audit & SEO Conversion Improvement Plan</h3>
+      <p>A conversion rate optimization audit for pinnaclebhc.com — evaluating how organic SEO traffic converts into appointment bookings, identifying friction points, and providing a structured improvement plan.</p>
+      <div class="wc-tags"><span class="wc-tag">CRO</span><span class="wc-tag">Healthcare</span><span class="wc-tag">UX</span><span class="wc-tag">SEO</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Conversion%20Rate%20Optimization%20(CRO)%20Audit%20%26%20SEO%20Conversion%20Improvement%20Plan.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Conversion%20Rate%20Optimization%20(CRO)%20Audit%20%26%20SEO%20Conversion%20Improvement%20Plan.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- KINDSON BROKEN LINKS -->
+    <div class="work-card agency" data-type="agency">
+      <div class="context-badge badge-agency">🏢 Verge Digitals Internship</div>
+      <div class="wc-category">Technical SEO Audit</div>
+      <div class="wc-client">Client: KindsonTheGenius.com</div>
+      <h3>Deep Scan — Broken Links Audit Report</h3>
+      <p>A deep broken link scan for KindsonTheGenius.com — identifying all 404 errors, internal broken links, and their source pages, with clear recommendations for 301 redirects or link updates.</p>
+      <div class="wc-tags"><span class="wc-tag">Broken Links</span><span class="wc-tag">404 Errors</span><span class="wc-tag">Technical SEO</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/The%20Deep%20Scan%20Report%20Of%20Broken%20Links%20-%20Sheet1.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/The%20Deep%20Scan%20Report%20Of%20Broken%20Links%20-%20Sheet1.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+    <!-- BIVENT -->
+    <div class="work-card freelance" data-type="freelance">
+      <div class="context-badge badge-freelance">💼 Freelance</div>
+      <div class="wc-category">Landing Page Copywriting</div>
+      <div class="wc-client">Client: Bivent Education</div>
+      <h3>Two SEO Landing Pages — French Language School</h3>
+      <p>Wrote two full SEO-optimized landing pages for Bivent, a French language tutorial school targeting Nigerians preparing for TEF Canada, TCF Canada, DELF/DALF exams, and immigration to francophone countries.</p>
+      <div class="wc-tags"><span class="wc-tag">Landing Page</span><span class="wc-tag">Copywriting</span><span class="wc-tag">Education</span><span class="wc-tag">SEO</span></div>
+      <div class="wc-actions">
+        <a href="https://jebsonseo.github.io/JebsonSEO/Bivent%20Two%20Landing%20Pages%20For%20Nigerians%20in%20Nigeria.pdf" target="_blank" class="wc-btn-view">View</a>
+        <a href="https://jebsonseo.github.io/JebsonSEO/Bivent%20Two%20Landing%20Pages%20For%20Nigerians%20in%20Nigeria.pdf" download class="wc-btn-dl">Download</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="certs" id="certificates">
+  <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+    <div class="label label-center">Credentials</div>
+    <h2 class="section-title" style="margin:0 auto .6rem;text-align:center">Certificates & <em>Qualifications</em></h2>
+    <p style="color:var(--muted);font-size:.9rem;max-width:440px;margin:0 auto">5 certifications earned through structured training and hands-on industry courses.</p>
+  </div>
+
+  <!-- Semrush Group -->
+  <div class="reveal" style="margin-bottom:2.5rem">
+    <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.25rem">
+      <div style="width:34px;height:34px;background:linear-gradient(135deg,#ff6b35,#c8a96e);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">📊</div>
+      <div>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)">Semrush Academy</div>
+        <div style="font-size:.78rem;color:var(--muted)">4 Certificates Earned</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem">
+      <div class="cert-card">
+        <div class="cert-thumb"><span class="cert-icon">🤖</span><span class="cert-issuer-badge" style="color:rgba(255,107,53,.9)">Semrush Academy</span></div>
+        <div class="cert-body"><div class="cert-type">AI & SEO</div><h3>AI Search Operating System</h3><div class="cert-meta">Semrush Academy — 2024</div><a href="https://jebsonseo.github.io/JebsonSEO/First-SEO-Cert.pdf" target="_blank" class="cert-link">View Certificate →</a></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-thumb" style="background:linear-gradient(135deg,#0a1a2a,#0d2640)"><span class="cert-icon">📝</span><span class="cert-issuer-badge" style="color:rgba(255,107,53,.9)">Semrush Academy</span></div>
+        <div class="cert-body"><div class="cert-type">Content & SEO</div><h3>Content Marketing Essentials for SEO and AI Search</h3><div class="cert-meta">Semrush Academy — 2024</div><a href="https://jebsonseo.github.io/JebsonSEO/Second-SEO-Cert.pdf" target="_blank" class="cert-link">View Certificate →</a></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-thumb" style="background:linear-gradient(135deg,#0d1f0a,#1a3312)"><span class="cert-icon">🔗</span><span class="cert-issuer-badge" style="color:rgba(255,107,53,.9)">Semrush Academy</span></div>
+        <div class="cert-body"><div class="cert-type">Off-Page SEO</div><h3>Off-Page SEO and AI Search Essentials with Semrush</h3><div class="cert-meta">Semrush Academy — 2024</div><a href="https://jebsonseo.github.io/JebsonSEO/Third-SEO-Cert.pdf" target="_blank" class="cert-link">View Certificate →</a></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-thumb" style="background:linear-gradient(135deg,#1a0a1a,#2d0d2d)"><span class="cert-icon">👁️</span><span class="cert-issuer-badge" style="color:rgba(255,107,53,.9)">Semrush Academy</span></div>
+        <div class="cert-body"><div class="cert-type">AI Visibility</div><h3>AI Visibility Essentials with Semrush</h3><div class="cert-meta">Semrush Academy — 2024</div><a href="https://jebsonseo.github.io/JebsonSEO/Fourth-SEO-Cert.pdf" target="_blank" class="cert-link">View Certificate →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Udemy Group -->
+  <div class="reveal">
+    <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.25rem">
+      <div style="width:34px;height:34px;background:linear-gradient(135deg,#3d0099,#6d28d9);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">🎓</div>
+      <div>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)">Udemy</div>
+        <div style="font-size:.78rem;color:var(--muted)">1 Certificate Earned</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem;max-width:320px">
+      <div class="cert-card">
+        <div class="cert-thumb" style="background:linear-gradient(135deg,#3d0099,#6d28d9)"><span class="cert-icon">🎓</span><span class="cert-issuer-badge" style="color:rgba(200,160,255,.9)">Udemy</span></div>
+        <div class="cert-body"><div class="cert-type">Digital Marketing</div><h3>SEO & Digital Marketing — Ing. Morávek Complete Course</h3><div class="cert-meta">Udemy — 2026</div><a href="https://jebsonseo.github.io/JebsonSEO/MY%20SEO%20%26%20DIGITAL%20MARKETING%20CERTIFICATE%20FROM%20UDEMY..pdf" target="_blank" class="cert-link">View Certificate →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <div class="reveal" style="text-align:center;margin-bottom:3rem">
+    <div class="label label-center">Work Samples</div>
+    <h2 class="section-title" style="margin:0 auto .6rem;text-align:center">Downloads & <em>Resources</em></h2>
+    <p style="color:var(--muted);font-size:.9rem;max-width:460px;margin:0 auto">Real deliverables from real projects — viewable and downloadable.</p>
+  </div>
+  <div class="dl-grid reveal">
+
+    <div class="dl-card" style="--c:var(--rust)"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--rust),var(--gold))"></div>
+      <div class="dl-icon-wrap" style="background:rgba(184,76,43,.1);border:1px solid rgba(184,76,43,.2)">📅</div>
+      <div class="dl-card-body">
+        <div class="dl-type">Content Planning</div>
+        <h3>DRP Initiative — 30-Day SEO Content Calendar</h3>
+        <p>Real 30-day content calendar developed for Inclusion Post, mapping topics to search intent with a structured publishing schedule.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">PDF · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/DRP%20Initiative%2030days%20Content%20Calendar%20For%20June%20-%20DRP%20Initiative%2030days%20Content%20Calendar%20V2.pdf" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/DRP%20Initiative%2030days%20Content%20Calendar%20For%20June%20-%20DRP%20Initiative%2030days%20Content%20Calendar%20V2.pdf" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#0a66c2,#4a9ee8)"></div>
+      <div class="dl-icon-wrap" style="background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.2)">🔍</div>
+      <div class="dl-card-body">
+        <div class="dl-type">Keyword Research</div>
+        <h3>Keyword Research — LinkableAsset.com</h3>
+        <p>Full keyword research with search intent mapping, recommended titles, and meta descriptions — produced for a link building agency.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">PDF · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Keyword%20Research%20For%20LinkableAsset.com.pdf" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Keyword%20Research%20For%20LinkableAsset.com.pdf" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#4caf79,#2d8a55)"></div>
+      <div class="dl-icon-wrap" style="background:rgba(76,175,121,.1);border:1px solid rgba(76,175,121,.2)">🗺️</div>
+      <div class="dl-card-body">
+        <div class="dl-type">SEO Roadmap</div>
+        <h3>SEO Roadmap — LinkableAsset.com</h3>
+        <p>A phased SEO roadmap covering technical fixes, content expansion, authority building, and monthly KPIs for a link building agency.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">PDF · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Roadmap%20For%20Linkableasset.com%20(1).pdf" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/SEO%20Roadmap%20For%20Linkableasset.com%20(1).pdf" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#ff6b35,#c8a96e)"></div>
+      <div class="dl-icon-wrap" style="background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.2)">📊</div>
+      <div class="dl-card-body">
+        <div class="dl-type">CRO Audit</div>
+        <h3>CRO Audit — Pinnacle Behavioral Health Center</h3>
+        <p>Conversion rate optimization audit evaluating how organic SEO traffic converts into bookings, with a structured improvement plan.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">PDF · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Conversion%20Rate%20Optimization%20(CRO)%20Audit%20%26%20SEO%20Conversion%20Improvement%20Plan.pdf" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Conversion%20Rate%20Optimization%20(CRO)%20Audit%20%26%20SEO%20Conversion%20Improvement%20Plan.pdf" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#6d28d9,#a435f0)"></div>
+      <div class="dl-icon-wrap" style="background:rgba(109,40,217,.1);border:1px solid rgba(109,40,217,.2)">⚡</div>
+      <div class="dl-card-body">
+        <div class="dl-type">Technical SEO Audit</div>
+        <h3>PageSpeed Audit Report — Alkademy.com</h3>
+        <p>Full Google PageSpeed Insights audit for an AI learning platform — mobile score 38, desktop 62 — with prioritized technical fixes across performance, accessibility, and SEO.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">DOCX · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Alkademy_PageSpeed_Audit_Report.docx" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/Alkademy_PageSpeed_Audit_Report.docx" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dl-card"><div style="position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,#b84c2b,#e8c98a)"></div>
+      <div class="dl-icon-wrap" style="background:rgba(184,76,43,.1);border:1px solid rgba(184,76,43,.2)">🔗</div>
+      <div class="dl-card-body">
+        <div class="dl-type">Technical SEO Audit</div>
+        <h3>Broken Links Deep Scan — KindsonTheGenius.com</h3>
+        <p>Complete broken link audit identifying all 404 errors and their source pages — with redirect and update recommendations for each broken URL.</p>
+        <div class="dl-actions">
+          <span class="dl-badge">PDF · Free</span>
+          <a href="https://jebsonseo.github.io/JebsonSEO/The%20Deep%20Scan%20Report%20Of%20Broken%20Links%20-%20Sheet1.pdf" target="_blank" class="dl-btn-view">View</a>
+          <a href="https://jebsonseo.github.io/JebsonSEO/The%20Deep%20Scan%20Report%20Of%20Broken%20Links%20-%20Sheet1.pdf" download class="dl-btn-dl">⬇ Download</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--cream);padding:6rem 5vw">
+  <div class="reveal" style="text-align:center;margin-bottom:3rem">
+    <div class="label label-center">Client Feedback</div>
+    <h2 class="section-title" style="margin:0 auto .6rem;text-align:center">What clients <em>say</em></h2>
+  </div>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;max-width:1000px;margin:0 auto">
+
+    <!-- Review 1 — Foreign (UK) -->
+    <div style="background:var(--white);border:1px solid rgba(200,169,110,.22);border-radius:4px;padding:2rem;position:relative">
+      <div style="font-family:var(--fd);font-size:3.5rem;color:rgba(200,169,110,.2);line-height:.6;margin-bottom:.9rem;font-style:italic">"</div>
+      <div style="color:var(--gold);font-size:.72rem;letter-spacing:.1em;margin-bottom:.9rem">★★★★★</div>
+      <p style="font-size:.88rem;color:#3a3530;line-height:1.85;font-style:italic;margin-bottom:1.5rem">Sheriffdeen's keyword research and content strategy for our link building agency were spot on. He understood our niche quickly, delivered clean, well-structured documents, and communicated clearly throughout. I'd work with him again without hesitation.</p>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#0a66c2,#4a9ee8);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;color:white;flex-shrink:0">J</div>
+        <div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--ink)">James H.</div>
+          <div style="font-size:.73rem;color:var(--muted)">Founder, LinkableAsset.com — United Kingdom</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 2 — Foreign (USA) -->
+    <div style="background:var(--white);border:1px solid rgba(200,169,110,.22);border-radius:4px;padding:2rem;position:relative">
+      <div style="font-family:var(--fd);font-size:3.5rem;color:rgba(200,169,110,.2);line-height:.6;margin-bottom:.9rem;font-style:italic">"</div>
+      <div style="color:var(--gold);font-size:.72rem;letter-spacing:.1em;margin-bottom:.9rem">★★★★★</div>
+      <p style="font-size:.88rem;color:#3a3530;line-height:1.85;font-style:italic;margin-bottom:1.5rem">We brought Sheriffdeen in to audit our website's conversion flow. His CRO report was thorough, practical, and easy for our team to act on. He clearly understands how SEO and user experience intersect. Really impressive work for someone at his level.</p>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rust),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;color:white;flex-shrink:0">M</div>
+        <div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--ink)">Michelle T.</div>
+          <div style="font-size:.73rem;color:var(--muted)">Marketing Manager, Pinnacle BHC — United States</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review 3 — Nigerian -->
+    <div style="background:var(--white);border:1px solid rgba(200,169,110,.22);border-radius:4px;padding:2rem;position:relative">
+      <div style="font-family:var(--fd);font-size:3.5rem;color:rgba(200,169,110,.2);line-height:.6;margin-bottom:.9rem;font-style:italic">"</div>
+      <div style="color:var(--gold);font-size:.72rem;letter-spacing:.1em;margin-bottom:.9rem">★★★★★</div>
+      <p style="font-size:.88rem;color:#3a3530;line-height:1.85;font-style:italic;margin-bottom:1.5rem">Sheriffdeen has been handling our content and SEO at Inclusion Post since March and I can see the discipline he brings to the work. He's consistent, he asks the right questions, and the content calendar he built for us was exactly what we needed to stay organised and on-brand.</p>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#4caf79,#2d8a55);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;color:white;flex-shrink:0">A</div>
+        <div>
+          <div style="font-size:.85rem;font-weight:600;color:var(--ink)">Adebayo O.</div>
+          <div style="font-size:.73rem;color:var(--muted)">Director, DRP Initiative — Lagos, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="reveal">
+    <div class="label">Get In Touch</div>
+    <h2 class="cta-title">Ready to grow your <em>organic presence?</em></h2>
+    <p class="cta-body">Whether you need a content strategy, SEO audit, keyword research, or ongoing writing — let's talk about what's possible for your brand.</p>
+    <div class="cta-actions">
+      <a href="mailto:arowojebesheriffdeen@gmail.com" class="btn-gold">Send Me an Email</a>
+      <a href="https://www.linkedin.com/in/arowojebe-sheriffdeen-6b6015286" target="_blank" class="btn-outline-light">View LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <p>Connect With Me</p>
+  <p class="tagline">Find me across the web</p>
+  <div class="social-btns">
+    <a href="mailto:arowojebesheriffdeen@gmail.com" class="soc-btn soc-gmail">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Gmail
+    </a>
+    <a href="https://www.instagram.com/sheriff_aros/" target="_blank" class="soc-btn soc-ig">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>Instagram
+    </a>
+    <a href="https://www.facebook.com/share/1JCHFE2fCM/" target="_blank" class="soc-btn soc-fb">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook
+    </a>
+    <a href="https://x.com/sheriff_aros" target="_blank" class="soc-btn soc-x">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)
+    </a>
+    <a href="https://www.linkedin.com/in/arowojebe-sheriffdeen-6b6015286" target="_blank" class="soc-btn soc-li">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+    </a>
+    <a href="https://youtube.com/@sheriff_aros" target="_blank" class="soc-btn soc-yt">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>YouTube
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Jebson<span>SEO</span></div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#downloads">Resources</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 JebsonSEO. All rights reserved.</div>
+</footer>
+
+<script>
+/* NAV */
+function toggleNav(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeNav(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileNav').classList.remove('open');
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('nav-scrolled',window.scrollY>50);
+});
+
+/* SCROLL REVEAL */
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* COUNTER ANIMATION */
+function animateCounter(id,target){
+  let start=0;
+  const el=document.getElementById(id);
+  const step=target/120;
+  const timer=setInterval(()=>{
+    start=Math.min(start+step,target);
+    el.textContent=Math.floor(start);
+    if(start>=target)clearInterval(timer);
+  },16);
+}
+const heroObserver=new IntersectionObserver((entries)=>{
+  if(entries[0].isIntersecting){
+    animateCounter('c1',7);
+    animateCounter('c2',5);
+    animateCounter('c3',2);
+    animateCounter('c4',12);
+    heroObserver.disconnect();
+  }
+},{threshold:.3});
+heroObserver.observe(document.querySelector('.hero-strip'));
+
+/* WORK FILTER */
+function filterWork(type,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.work-card:not(.work-card-featured)').forEach(card=>{
+    if(type==='all'||card.dataset.type===type){
+      card.classList.remove('hidden');
+    }else{
+      card.classList.add('hidden');
+    }
+  });
+}
+
+/* CERTIFICATE TABS */
+function switchTab(tab,btn){
+  document.querySelectorAll('.cert-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.cert-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+tab).classList.add('active');
+}
+</script>
+</body>
+</html>
